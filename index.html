@@ -172,13 +172,13 @@ const STR = {
  aboutH:["關於這場座談","About the forum"],
  aboutLede:["我們習慣用「懶人包」認識世界，卻常忽略事實背後的脈絡。這場活動邀請你放慢一點。","We are used to learning the world through quick summaries, and we often miss the context behind the facts. This forum invites you to slow down."],
  about1:["活動以「企業 ESG 與科技減碳」為主軸，從海洋科學與科技應用出發，邀請產官學研各界人士，以及臺灣與帛琉的青年研究生代表，透過跨域對談與海洋科普閱讀，帶大家理解科技減碳的具體作法，並從生活、文化與研究經驗，思考海洋永續的意義與可以參與的方式。","The theme is corporate ESG and carbon-reduction technology. Starting from ocean science and its applications, we bring together people from industry, government, academia and research, plus graduate students from Taiwan and Palau. Through cross-disciplinary conversation and popular ocean-science reading, we look at how technology cuts carbon in practice, and ask what ocean sustainability means and how young people can take part."],
- about2:["適合對象：大專院校學生，以及關心永續的青年。","Who it’s for: university students and young people who care about sustainability."],
+ about2:["適合對象：高中及大專院校學生，以及關心永續的青年。","Who it’s for: university students and young people who care about sustainability."],
  agendaH:["議程","Program"],
  agendaLede:["活動仍在籌備中，講者與時段以最終公告為準。","The event is still being planned. Speakers and times are subject to the final announcement."],
  guestsH:["講者與合作單位","Speakers and partners"],
  guestsLede:["邀約進度會隨確認狀況更新。","Invitation status is updated as people confirm."],
  regH:["報名","Register"],
- regLede:["完全免費，提供午餐，現場還有抽獎禮物。名額 60–80 人，額滿為止。個人與團體請選擇對應表單。","Completely free, with lunch and prize draws on site. 60–80 seats, first come first served. Please choose the individual or group form."],
+ regLede:["完全免費，提供午餐，現場另有抽獎活動。名額 60–80 人，額滿為止。個人與團體請選擇對應表單。","Completely free, with lunch and prize draws on site. 60–80 seats, first come first served. Please choose the individual or group form."],
  soloH:["個人報名","Individual registration"],
  solo1:["填寫姓名、學校或單位、聯絡方式","Name, school or organization, and contact details"],
  solo2:["選擇午餐：葷食／素食","Lunch choice: meat or vegetarian"],
@@ -206,29 +206,30 @@ const STR = {
 
 const AGENDA = [
  {t:"09:30–10:00", h:["報到入場","Check-in"], p:["簽到、領取資料、參觀海報。","Sign in, pick up materials, browse the posters."]},
- {t:"10:00–10:15", h:["開場與致詞","Opening and welcome"], p:["主持人王意婷介紹全天流程；臺大海洋中心主任曾于恒老師致詞，接著大合照。","Host Yi-Ting Wang introduces the day; Prof. Yu-Heng Tseng, Director of the NTU Ocean Center, gives opening remarks, followed by a group photo."], big:1},
- {t:"10:15–11:45", h:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], p:["詹森老師介紹與江偉全合著的海洋科普作品。議題：當科學普及淪為知識速食，我們得到的只是速成的盲點，而非深度的海洋。現場有問答與抽獎（海洋書籍 3 本及獎品）。","Prof. Sen Jan presents the popular ocean-science book he co-wrote with Wei-Chuan Chiang. Theme: when science outreach becomes fast food, we gain quick blind spots rather than a deep understanding of the ocean. Includes Q&A and a prize draw (3 ocean books and other gifts)."], big:1, s:"ok"},
- {t:"11:45–12:15", h:["Q&A、茶敘與簽書","Q&A, tea and book signing"], p:["向作者提問，書籍展示與簽書交流。","Ask the author questions, browse the books and get them signed."]},
+ {t:"10:00–10:10", h:["主持人開場","Opening and introduction"], p:["臺大研究生協會長王意婷介紹活動主軸、與會貴賓及全天流程。","Yi-Ting Wang, President of the NTU Graduate Student Association, introduces the event theme, guests and program."], big:1},
+ {t:"10:10–10:15", h:["開場致詞及大合照","Welcome remarks and group photo"], p:["臺大海洋中心主任曾于恒教授致詞，接著進行大合照。","Welcome remarks by Prof. Yu-Heng Tseng, Director of the NTU Ocean Center, followed by a group photo."], big:1},
+ {t:"10:15–11:45", h:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], p:["詹森教授介紹與江偉全合著的《黑潮震盪：從臺灣東岸啟航的北太平洋時空之旅》，從黑潮出發，探討海洋科普閱讀與深入理解科學的重要性。","Prof. Sen Jan introduces the ocean-science book he co-authored with Wei-Chuan Chiang, exploring the Kuroshio and the importance of reading beyond quick summaries to understand science."], big:1, s:"ok"},
+ {t:"11:45–12:15", h:["作者Q&A交流與簽名書抽獎","Author Q&A and signed-book prize draw"], p:["與詹森教授交流、提出問題，並抽出3本簽名書。","Ask Prof. Sen Jan questions and join a prize draw for three signed copies of the book."]},
  {t:"12:15–13:10", h:["午餐與休息","Lunch and break"], p:["主辦單位提供午餐，報名時請選擇葷食或素食。","Lunch is provided. Please choose meat or vegetarian when you register."], rest:1},
- {t:"13:10–14:00", h:["海洋保育實例分享：草根精神的海洋保育","Ocean conservation in practice: grassroots spirit"], p:["賴以平老師（2025 未來教育台灣 100 得獎老師）以照片帶大家看海洋保育的現場。","Teacher Yi-Ping Lai (2025 Future Education Taiwan 100 awardee) shares photos from the field of ocean conservation."], big:1},
- {t:"14:00–15:00", h:["台達電主題講座","Delta Electronics keynote"], p:["企業 ESG 與科技減碳：企業實踐、技術案例與青年參與。","Corporate ESG and carbon-reduction technology: company practice, technical cases and youth participation."], big:1, s:"inv"},
+ {t:"13:10–14:00", h:["草根精神的海洋保育","Grassroots Marine Conservation"], p:["賴以平（臺大海洋研究所博士生、2025未來教育臺灣100得獎教師）分享帶領學生參與鱟保育及CoralWatch珊瑚觀察的經驗，從教學與志工行動出發，探索人人都能參與的海洋保育。","Yi-Ping Lai, a doctoral student at NTU’s Institute of Oceanography and a 2025 Future Education Taiwan 100 awardee, shares experiences guiding students in horseshoe crab conservation and CoralWatch coral observations, exploring how everyone can contribute through education and volunteering."], big:1},
+ {t:"14:00–15:00", h:["企業ESG、海洋保育與科技減碳實踐","Corporate ESG, Marine Conservation and Carbon-Reduction Technology"], p:["擬邀台達電子文教基金會張楊乾執行長，分享企業永續、海洋保育與科技減碳的實務經驗。講題依講者確認後公告。","Invited speaker: the Delta Electronics Foundation’s CEO, 張楊乾, to share practical experience in corporate sustainability, marine conservation and carbon-reduction technology. The talk title will be announced once confirmed."], big:1, s:"inv"},
  {t:"15:00–15:10", h:["休息","Break"], p:["茶點。","Refreshments."], rest:1},
- {t:"15:10–16:00", h:["青年永續論壇（英語）","Youth Sustainability Panel (in English)"], p:["台達電代表，與臺灣海洋研究生、政大帛琉研究生代表對談。","A Delta Electronics representative talks with graduate students in ocean science from Taiwan and from Palau (NCCU)."], big:1, s:"inv"},
- {t:"16:00–16:15", h:["休息與抽獎","Break and prize draw"], p:["抽禮券、小獎品，抽獎禮物豐富。","Gift voucher and prize draws."], rest:1},
- {t:"16:15–16:30", h:["總結與回饋","Wrap-up and feedback"], p:["串聯企業實踐、青年觀點與海洋知識。","Connecting corporate practice, youth perspectives and ocean knowledge."]}
+ {t:"15:10–16:00", h:["臺帛青年永續座談（英語）","Taiwan–Palau Youth Sustainability Panel (in English)"], p:["規劃邀請張楊乾執行長（台達電子文教基金會，邀約中），與帛琉青年代表Kenley Kenneth（盧恩立）、臺灣青年代表賴以平及許雅貞，從生活、文化與研究經驗交流海洋永續及青年參與途徑。","The planned panel brings together a representative of the Delta Electronics Foundation (invitation pending), Palauan youth representative Kenley Kenneth, and Taiwanese youth representatives Yi-Ping Lai and Ya-Chen Hsu to discuss ocean sustainability and youth participation through their lived, cultural and research experiences."], big:1, s:"inv"},
+ {t:"16:00–16:30", h:["總結與回饋","Wrap-up and Feedback"], p:["主持人結語、禮券與小獎品抽獎，並填寫活動回饋表單。","Closing remarks, a prize draw for gift vouchers and small gifts, and completion of the event feedback form."]}
 ];
 
 const PEOPLE = [
  {n:["王意婷","Yi-Ting Wang"], r:["臺大研究生協會會長・全天主持人","President, NTU Graduate Student Association · Host for the day"], s:"ok"},
  {n:["曾于恒 老師","Prof. Yu-Heng Tseng"], r:["臺大海洋中心主任・開場致詞","Director, NTU Ocean Center · Opening remarks"], s:"ok"},
  {n:["詹森 老師","Prof. Sen Jan"], r:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], s:"ok"},
- {n:["賴以平 老師","Yi-Ping Lai"], r:["海洋保育實例分享","Ocean conservation case sharing"], s:"ok"},
- {n:["台達電子文教基金會","Delta Electronics Foundation"], r:["企業 ESG 與科技減碳講座","Corporate ESG and carbon-reduction talk"], s:"inv"},
- {n:["臺灣海洋研究生、政大帛琉研究生代表","Graduate students from Taiwan and Palau (NCCU)"], r:["青年永續論壇（英語）","Youth Sustainability Panel (in English)"], s:"inv"}
+ {n:["賴以平","Yi-Ping Lai"], r:["臺大海洋研究所博士生・2025未來教育臺灣100得獎教師｜分享鱟保育、CoralWatch與草根行動經驗","Doctoral student, Institute of Oceanography, NTU · 2025 Future Education Taiwan 100 awardee | Horseshoe crab conservation, CoralWatch and grassroots action"], s:"ok"},
+ {n:["張楊乾 執行長","張楊乾"], r:["台達電子文教基金會執行長・企業永續、海洋保育與科技減碳經驗分享","CEO, Delta Electronics Foundation · Corporate sustainability, marine conservation and carbon-reduction technology"], s:"inv"},
+ {n:["許雅貞","許雅貞"], r:["臺大海洋研究所海洋物理組碩士生・臺灣青年代表","Master’s student in physical oceanography, Institute of Oceanography, NTU · Youth representative from Taiwan"], s:"ok"},
+ {n:["Kenley Kenneth（盧恩立）","Kenley Kenneth"], r:["帛琉青年代表・政大國際研究碩士｜關注海洋政策、文化與青年氣候行動","Youth representative from Palau · Master’s degree in International Studies, NCCU | Ocean policy, culture and youth climate action"], s:"tbd"},
 ];
 
 const NEWS = [
- {d:"2026-11-03", t:["個人與團體報名皆已開放。講者與場地確認後會更新。","Individual and group registration are now open; we will update as speakers and venue are confirmed."]},
+ {d:"2026-11-03", t:["個人與團體報名皆已開放，歡迎高中、大專院校學生及關心永續的青年參加。講者邀約進度將持續更新。","Individual and group registration are open to high school and university students, and young people interested in sustainability. Speaker invitation updates will be posted here."]},
  {d:"2026-11-03", t:["報名完全免費，提供午餐，現場有抽獎禮物。","Registration is completely free, with lunch and prize draws on site."]},
  {d:"2026-11-03", t:["曾于恒老師（臺大海洋中心主任）與詹森老師（《黑潮震盪》作者）確認出席。","Prof. Yu-Heng Tseng (Director, NTU Ocean Center) and Prof. Sen Jan (author of Kuroshio Oscillation) have confirmed."]}
 ];
