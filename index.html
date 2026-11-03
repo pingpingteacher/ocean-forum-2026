@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>青年海洋永續座談｜2026.12.04 臺大</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5FAF9; --surface:#FFFFFF; --ink:#10262F; --muted:#4F6A72; --line:#D3E3E3;
+  --abyss:#0A2A3B; --current:#14758A; --coral:#D9472F; --coral-ink:#FFFFFF; --foam:#E3F1F0;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#07161D; --surface:#0E2530; --ink:#E4F0F0; --muted:#9DB8BE; --line:#1F3B48; --foam:#12313D; --current:#5BC0D3; --coral:#FF7A63; --coral-ink:#1A0A06;}}
+:root[data-theme="dark"]{--bg:#07161D; --surface:#0E2530; --ink:#E4F0F0; --muted:#9DB8BE; --line:#1F3B48; --foam:#12313D; --current:#5BC0D3; --coral:#FF7A63; --coral-ink:#1A0A06;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.8;font-size:17px}
+a{color:var(--current)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+section{padding:64px 0}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(26px,4vw,34px);margin:0 0 8px;line-height:1.35}
+.lede{color:var(--muted);margin:0 0 32px;max-width:36em}
+
+/* hero */
+.hero{background:var(--abyss);color:#EAF6F6;position:relative;overflow:hidden;padding:72px 0 120px}
+.hero .wrap{position:relative;z-index:2}
+.hero small{display:block;font-size:15px;color:#9FCBD3;margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(44px,9vw,88px);line-height:1.12;margin:0 0 20px;letter-spacing:.02em}
+.hero p.sub{font-size:clamp(17px,2.4vw,21px);max-width:30em;margin:0 0 30px;color:#CFE6E8}
+.cta{display:inline-block;background:var(--coral);color:var(--coral-ink);font-weight:700;text-decoration:none;padding:14px 28px;border-radius:999px;border:0;font-size:17px;font-family:inherit}
+.cta.ghost{background:transparent;color:#EAF6F6;border:2px solid #5BC0D3;margin-left:10px}
+.waves{position:absolute;left:0;right:0;bottom:-2px;height:110px;z-index:1}
+.waves svg{width:200%;height:100%;display:block;animation:drift 28s linear infinite}
+@keyframes drift{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.waves svg{animation:none}}
+.wave-fill{fill:var(--bg)}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);margin-top:-48px;position:relative;z-index:3;overflow:hidden}
+.facts div{padding:18px 22px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-size:14px;color:var(--muted);font-weight:500}
+.facts span{font-weight:700;font-size:18px}
+.count{font-family:var(--serif);font-size:26px;color:var(--coral)}
+
+/* status */
+.st{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:2px 10px;border-radius:999px;background:var(--foam);color:var(--ink);white-space:nowrap;vertical-align:middle}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.st.ok::before{background:#1E9A62}.st.inv::before{background:#E0A100}.st.tbd::before{background:var(--muted)}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-left:3px solid var(--current)}
+.tl li{padding:0 0 26px 26px;position:relative}
+.tl li::before{content:"";position:absolute;left:-9px;top:9px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--current)}
+.tl li.big::before{background:var(--current)}
+.tl time{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--current);display:block}
+.tl h3{margin:0;font-size:19px;line-height:1.5}
+.tl p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
+.tl.nobreak li.rest h3{font-weight:500;color:var(--muted);font-size:17px}
+
+/* people */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.person h3{margin:6px 0 2px;font-family:var(--serif);font-size:20px}
+.person p{margin:0;color:var(--muted);font-size:15px}
+
+/* register */
+#register{background:var(--foam)}
+.reg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column}
+.card h3{margin:0 0 6px;font-family:var(--serif);font-size:22px}
+.card ul{margin:10px 0 22px;padding-left:20px;color:var(--muted);font-size:15.5px;flex:1}
+.card .cta{text-align:center}
+.cta[aria-disabled="true"]{background:var(--line);color:var(--muted);pointer-events:none}
+.note{margin-top:22px;font-size:15px;color:var(--muted)}
+
+/* news + faq */
+.news{list-style:none;padding:0;margin:0}
+.news li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.news time{color:var(--muted);font-size:15px}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0;color:var(--muted)}
+footer{background:var(--abyss);color:#B9D5D9;padding:36px 0 44px;font-size:15px}
+footer a{color:#8fd6e4}
+@media (max-width:560px){.news li{grid-template-columns:1fr;gap:2px}.facts div{border-right:0;border-bottom:1px solid var(--line)}.cta.ghost{margin:12px 0 0}}
+</style>
+<style>
+.lang{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;z-index:20;background:rgba(10,42,59,.85);color:#EAF6F6;border:1.5px solid #5BC0D3;border-radius:999px;padding:6px 16px;font:700 15px var(--sans);cursor:pointer;backdrop-filter:blur(6px)}
+</style>
+</head>
+<body>
+<button class="lang" id="langBtn" type="button" aria-label="Switch language / 切換語言"></button>
+
+<header class="hero">
+  <div class="wrap">
+    <small data-k="host"></small>
+    <h1 data-k="h1"></h1>
+    <p class="sub" data-k="sub"></p>
+    <a class="cta" href="#register" data-k="ctaReg"></a><a class="cta ghost" href="#agenda" data-k="ctaAgenda"></a>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 2400 110" preserveAspectRatio="none"><path class="wave-fill" d="M0 60 Q150 10 300 60 T600 60 T900 60 T1200 60 T1500 60 T1800 60 T2100 60 T2400 60 V110 H0Z"/></svg>
+  </div>
+</header>
+
+<main>
+<div class="wrap"><div class="facts" id="facts"></div></div>
+
+<section id="about"><div class="wrap">
+  <h2 data-k="aboutH"></h2>
+  <p class="lede" data-k="aboutLede"></p>
+  <p data-k="about1"></p>
+  <p data-k="about2"></p>
+</div></section>
+
+<section id="agenda" style="background:var(--surface)"><div class="wrap">
+  <h2 data-k="agendaH"></h2>
+  <p class="lede" data-k="agendaLede"></p>
+  <ol class="tl" id="timeline"></ol>
+</div></section>
+
+<section id="guests"><div class="wrap">
+  <h2 data-k="guestsH"></h2>
+  <p class="lede" data-k="guestsLede"></p>
+  <div class="people" id="people"></div>
+</div></section>
+
+<section id="register"><div class="wrap">
+  <h2 data-k="regH"></h2>
+  <p class="lede" data-k="regLede"></p>
+  <div class="reg">
+    <div class="card"><h3 data-k="soloH"></h3><ul><li data-k="solo1"></li><li data-k="solo2"></li></ul><a class="cta" id="btnSolo" href="#register"></a></div>
+    <div class="card"><h3 data-k="groupH"></h3><ul><li data-k="group1"></li><li data-k="group2"></li></ul><a class="cta" id="btnGroup" href="#register"></a></div>
+  </div>
+  <p class="note" id="regNote"></p>
+</div></section>
+
+<section id="news"><div class="wrap"><h2 data-k="newsH"></h2><ul class="news" id="newsList"></ul></div></section>
+<section id="faq" style="background:var(--surface)"><div class="wrap"><h2 data-k="faqH"></h2><div id="faqList"></div></div></section>
+</main>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+/* ================================================================
+   ★ 滾動式修正只需要改這一區 / Edit only this block ★
+   status: ok = 已確認 Confirmed, inv = 邀約中 Invited, tbd = 待確認 To be confirmed
+   Every text is [中文, English]
+   ================================================================ */
+const CONFIG = {
+  dateISO: "2026-12-04",
+  venueStatus: "tbd",
+  soloUrl: "https://forms.gle/BTXnfszeye3xdCy17",    // ← 個人報名 Google 表單連結 / individual form link
+  groupUrl: "https://forms.gle/WWtm9aKwN3wPicYJ7",   // ← 團體報名 Google 表單連結 / group form link
+  regDeadline: ["", ""],   // 例 ["2026 年 11 月 27 日", "November 27, 2026"]
+  contact: ""              // 例 "name@example.com"
+};
+
+const STR = {
+ host:["主辦：國立臺灣大學第 58 屆研究生協會","Organized by the 58th Graduate Student Association, National Taiwan University"],
+ h1:["青年海洋<br>永續座談","Youth Ocean<br>Sustainability Forum"],
+ sub:["從黑潮的科普閱讀、海洋保育的田野故事，到企業的科技減碳，一天聽懂海洋永續怎麼從生活與研究開始。報名免費，提供午餐，還有抽獎禮物。","From reading about the Kuroshio, to grassroots ocean conservation, to corporate carbon-reduction technology: one day to see how ocean sustainability starts in daily life and research. Free to attend, lunch provided, and prizes to win."],
+ ctaReg:["我要報名","Register"], ctaAgenda:["看議程","See the program"],
+ aboutH:["關於這場座談","About the forum"],
+ aboutLede:["我們習慣用「懶人包」認識世界，卻常忽略事實背後的脈絡。這場活動邀請你放慢一點。","We are used to learning the world through quick summaries, and we often miss the context behind the facts. This forum invites you to slow down."],
+ about1:["活動以「企業 ESG 與科技減碳」為主軸，從海洋科學與科技應用出發，邀請產官學研各界人士，以及臺灣與帛琉的青年研究生代表，透過跨域對談與海洋科普閱讀，帶大家理解科技減碳的具體作法，並從生活、文化與研究經驗，思考海洋永續的意義與可以參與的方式。","The theme is corporate ESG and carbon-reduction technology. Starting from ocean science and its applications, we bring together people from industry, government, academia and research, plus graduate students from Taiwan and Palau. Through cross-disciplinary conversation and popular ocean-science reading, we look at how technology cuts carbon in practice, and ask what ocean sustainability means and how young people can take part."],
+ about2:["適合對象：大專院校學生，以及關心永續的青年。","Who it’s for: university students and young people who care about sustainability."],
+ agendaH:["議程","Program"],
+ agendaLede:["活動仍在籌備中，講者與時段以最終公告為準。","The event is still being planned. Speakers and times are subject to the final announcement."],
+ guestsH:["講者與合作單位","Speakers and partners"],
+ guestsLede:["邀約進度會隨確認狀況更新。","Invitation status is updated as people confirm."],
+ regH:["報名","Register"],
+ regLede:["完全免費，提供午餐，現場還有抽獎禮物。名額 60–80 人，額滿為止。個人與團體請選擇對應表單。","Completely free, with lunch and prize draws on site. 60–80 seats, first come first served. Please choose the individual or group form."],
+ soloH:["個人報名","Individual registration"],
+ solo1:["填寫姓名、學校或單位、聯絡方式","Name, school or organization, and contact details"],
+ solo2:["選擇午餐：葷食／素食","Lunch choice: meat or vegetarian"],
+ groupH:["團體報名","Group registration"],
+ group1:["由一位聯絡人代表填寫，適合社團、系所、班級","One contact person fills it in for a club, department or class"],
+ group2:["填寫總人數，以及葷食、素食各幾位","Total headcount, and how many meat and vegetarian meals"],
+ btnSolo:["個人報名","Register as an individual"], btnGroup:["團體報名","Register as a group"],
+ soon:["報名即將開放","Registration opens soon"],
+ regSoon:["報名表單準備中，開放後這裡會出現連結。","The registration forms are being prepared. Links will appear here when they open."],
+ regOpen:["表單會詢問人數與葷素，請如實填寫，方便主辦單位備餐。","The form asks for headcount and meal choice. Please answer accurately so we can order food."],
+ deadline:["報名截止：","Registration closes: "],
+ newsH:["最新消息","News"], faqH:["常見問題","FAQ"],
+ date:["日期","Date"], place:["地點","Venue"], size:["規模","Capacity"], cost:["費用","Cost"], left:["倒數","Countdown"],
+ dateV:["2026 年 12 月 4 日（五）","Friday, December 4, 2026"], timeV:["09:30–16:30","09:30–16:30"],
+ venueV:["臺大校內（沃思空間／新月台二樓）","NTU campus (Worth Space / Xinyuetai, 2F)"],
+ sizeV:["預計 60–80 人","60–80 people expected"], costV:["免費・含午餐","Free, lunch included"],
+ days:["天","days"], today:["就是今天","Today"], over:["活動已結束","Event has ended"],
+ st_ok:["已確認","Confirmed"], st_inv:["邀約中","Invited"], st_tbd:["待確認","To be confirmed"],
+ partners:["合作：臺大海洋中心、台達電子文教基金會（邀約中）","In partnership with: NTU Ocean Center; Delta Electronics Foundation (invited)"],
+ contactL:["聯絡：","Contact: "],
+ fine:["講者、合作單位與時程以最終公告為準。","Speakers, partners and schedule are subject to the final announcement."],
+ title:["青年海洋永續座談｜2026.12.04 臺大","Youth Ocean Sustainability Forum | Dec 4, 2026, NTU"],
+ btn:["EN","中文"]
+};
+
+const AGENDA = [
+ {t:"09:30–10:00", h:["報到入場","Check-in"], p:["簽到、領取資料、參觀海報。","Sign in, pick up materials, browse the posters."]},
+ {t:"10:00–10:15", h:["開場與致詞","Opening and welcome"], p:["主持人王意婷介紹全天流程；臺大海洋中心主任曾于恒老師致詞，接著大合照。","Host Yi-Ting Wang introduces the day; Prof. Yu-Heng Tseng, Director of the NTU Ocean Center, gives opening remarks, followed by a group photo."], big:1},
+ {t:"10:15–11:45", h:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], p:["詹森老師介紹與江偉全合著的海洋科普作品。議題：當科學普及淪為知識速食，我們得到的只是速成的盲點，而非深度的海洋。現場有問答與抽獎（海洋書籍 3 本及獎品）。","Prof. Sen Jan presents the popular ocean-science book he co-wrote with Wei-Chuan Chiang. Theme: when science outreach becomes fast food, we gain quick blind spots rather than a deep understanding of the ocean. Includes Q&A and a prize draw (3 ocean books and other gifts)."], big:1, s:"ok"},
+ {t:"11:45–12:15", h:["Q&A、茶敘與簽書","Q&A, tea and book signing"], p:["向作者提問，書籍展示與簽書交流。","Ask the author questions, browse the books and get them signed."]},
+ {t:"12:15–13:10", h:["午餐與休息","Lunch and break"], p:["主辦單位提供午餐，報名時請選擇葷食或素食。","Lunch is provided. Please choose meat or vegetarian when you register."], rest:1},
+ {t:"13:10–14:00", h:["海洋保育實例分享：草根精神的海洋保育","Ocean conservation in practice: grassroots spirit"], p:["賴以平老師（2025 未來教育台灣 100 得獎老師）以照片帶大家看海洋保育的現場。","Teacher Yi-Ping Lai (2025 Future Education Taiwan 100 awardee) shares photos from the field of ocean conservation."], big:1},
+ {t:"14:00–15:00", h:["台達電主題講座","Delta Electronics keynote"], p:["企業 ESG 與科技減碳：企業實踐、技術案例與青年參與。","Corporate ESG and carbon-reduction technology: company practice, technical cases and youth participation."], big:1, s:"inv"},
+ {t:"15:00–15:10", h:["休息","Break"], p:["茶點。","Refreshments."], rest:1},
+ {t:"15:10–16:00", h:["青年永續論壇（英語）","Youth Sustainability Panel (in English)"], p:["台達電代表，與臺灣海洋研究生、政大帛琉研究生代表對談。","A Delta Electronics representative talks with graduate students in ocean science from Taiwan and from Palau (NCCU)."], big:1, s:"inv"},
+ {t:"16:00–16:15", h:["休息與抽獎","Break and prize draw"], p:["抽禮券、小獎品，抽獎禮物豐富。","Gift voucher and prize draws."], rest:1},
+ {t:"16:15–16:30", h:["總結與回饋","Wrap-up and feedback"], p:["串聯企業實踐、青年觀點與海洋知識。","Connecting corporate practice, youth perspectives and ocean knowledge."]}
+];
+
+const PEOPLE = [
+ {n:["王意婷","Yi-Ting Wang"], r:["全天主持人","Host for the day"], s:"ok"},
+ {n:["曾于恒 老師","Prof. Yu-Heng Tseng"], r:["臺大海洋中心主任・開場致詞","Director, NTU Ocean Center · Opening remarks"], s:"ok"},
+ {n:["詹森 老師","Prof. Sen Jan"], r:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], s:"ok"},
+ {n:["賴以平 老師","Yi-Ping Lai"], r:["海洋保育實例分享","Ocean conservation case sharing"], s:"ok"},
+ {n:["台達電子文教基金會","Delta Electronics Foundation"], r:["企業 ESG 與科技減碳講座","Corporate ESG and carbon-reduction talk"], s:"inv"},
+ {n:["臺灣海洋研究生、政大帛琉研究生代表","Graduate students from Taiwan and Palau (NCCU)"], r:["青年永續論壇（英語）","Youth Sustainability Panel (in English)"], s:"inv"}
+];
+
+const NEWS = [
+ {d:"2026-11-03", t:["個人與團體報名皆已開放。講者與場地確認後會更新。","Individual and group registration are now open; we will update as speakers and venue are confirmed."]},
+ {d:"2026-11-03", t:["報名完全免費，提供午餐，現場有抽獎禮物。","Registration is completely free, with lunch and prize draws on site."]},
+ {d:"2026-11-03", t:["曾于恒老師（臺大海洋中心主任）與詹森老師（《黑潮震盪》作者）確認出席。","Prof. Yu-Heng Tseng (Director, NTU Ocean Center) and Prof. Sen Jan (author of Kuroshio Oscillation) have confirmed."]}
+];
+
+const FAQ = [
+ {q:["報名要付費嗎？","Is there a fee?"], a:["完全免費，主辦單位提供午餐。","No. It is completely free, and lunch is provided."]},
+ {q:["我只能參加一部分可以嗎？","Can I attend only part of the day?"], a:["可以，歡迎依時段自由進出；報名時若要午餐，請記得選擇葷素。","Yes, you are welcome to come and go. If you want lunch, please choose meat or vegetarian when you register."]},
+ {q:["英語論壇需要英文很好嗎？","Do I need strong English for the panel?"], a:["論壇以英語進行，會視需要提供中文協助，不需要擔心聽不懂就缺席。","The panel is in English, with Chinese support when needed. Please don’t skip it for fear of not following."]},
+ {q:["團體報名怎麼填？","How does group registration work?"], a:["由一位聯絡人填寫總人數與葷素人數，名單細節主辦單位會再與聯絡人確認。","One contact person enters the total headcount and the meat and vegetarian counts. We will confirm the name list with that person."]}
+];
+/* ================================================================ */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+let lang = "zh";
+try { lang = localStorage.getItem("lang") || ""; } catch(e){}
+if (lang !== "zh" && lang !== "en") lang = /^zh/i.test(navigator.language || "zh") ? "zh" : "en";
+
+function render(){
+  const i = lang === "zh" ? 0 : 1, s = k => STR[k][i];
+  const pill = st => st ? `<span class="st ${st}">${s("st_" + st)}</span>` : "";
+  document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+  document.title = s("title");
+  $("langBtn").textContent = s("btn");
+  document.querySelectorAll("[data-k]").forEach(el => { el.innerHTML = s(el.dataset.k); });
+
+  const d = Math.ceil((new Date(CONFIG.dateISO + "T09:30:00+08:00") - new Date()) / 864e5);
+  const left = d > 0 ? `<span class="count">${d}</span> ${s("days")}` : (d === 0 ? s("today") : s("over"));
+  $("facts").innerHTML = [
+    [s("date"), s("dateV") + "<br>" + s("timeV")],
+    [s("place"), s("venueV") + " " + pill(CONFIG.venueStatus)],
+    [s("size"), s("sizeV")], [s("cost"), s("costV")], [s("left"), left]
+  ].map(([k,v]) => `<div><b>${k}</b><span>${v}</span></div>`).join("");
+
+  $("timeline").innerHTML = AGENDA.map(a =>
+    `<li class="${a.big?'big':''} ${a.rest?'rest':''}"><time>${a.t}</time><h3>${esc(a.h[i])} ${pill(a.s)}</h3><p>${esc(a.p[i])}</p></li>`).join("");
+  $("people").innerHTML = PEOPLE.map(p =>
+    `<div class="person">${pill(p.s)}<h3>${esc(p.n[i])}</h3><p>${esc(p.r[i])}</p></div>`).join("");
+
+  [["btnSolo",CONFIG.soloUrl,"btnSolo"],["btnGroup",CONFIG.groupUrl,"btnGroup"]].forEach(([id,url,k]) => {
+    const el = $(id);
+    if (url){ el.href = url; el.target = "_blank"; el.rel = "noopener"; el.removeAttribute("aria-disabled"); el.textContent = s(k); }
+    else { el.setAttribute("aria-disabled","true"); el.textContent = s("soon"); }
+  });
+  $("regNote").textContent = (CONFIG.soloUrl || CONFIG.groupUrl)
+    ? (CONFIG.regDeadline[i] ? s("deadline") + CONFIG.regDeadline[i] + (i ? ". " : "。") : "") + s("regOpen")
+    : s("regSoon");
+
+  $("newsList").innerHTML = NEWS.slice().sort((a,b)=>b.d.localeCompare(a.d)).map(n =>
+    `<li><time>${n.d.replace(/-/g,".")}</time><span>${esc(n.t[i])}</span></li>`).join("");
+  $("faqList").innerHTML = FAQ.map(f => `<details><summary>${esc(f.q[i])}</summary><p>${esc(f.a[i])}</p></details>`).join("");
+  $("foot").innerHTML = `<p>${esc(s("host"))}<br>${esc(s("partners"))}</p>` +
+    (CONFIG.contact ? `<p>${s("contactL")}${esc(CONFIG.contact)}</p>` : "") + `<p>${esc(s("fine"))}</p>`;
+}
+$("langBtn").addEventListener("click", () => {
+  lang = lang === "zh" ? "en" : "zh";
+  try { localStorage.setItem("lang", lang); } catch(e){}
+  render();
+});
+render();
+</script>
+</body>
+</html>
