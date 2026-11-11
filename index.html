@@ -157,7 +157,7 @@ footer a{color:#8fd6e4}
    ================================================================ */
 const CONFIG = {
   dateISO: "2026-12-04",
-  venueStatus: "tbd",
+  venueStatus: "ok",
   soloUrl: "https://forms.gle/BTXnfszeye3xdCy17",    // ← 個人報名 Google 表單連結 / individual form link
   groupUrl: "https://forms.gle/WWtm9aKwN3wPicYJ7",   // ← 團體報名 Google 表單連結 / group form link
   regDeadline: ["", ""],   // 例 ["2026 年 11 月 27 日", "November 27, 2026"]
@@ -174,9 +174,9 @@ const STR = {
  about1:["活動以「企業 ESG 與科技減碳」為主軸，從海洋科學與科技應用出發，邀請產官學研各界人士，以及臺灣與帛琉的青年研究生代表，透過跨域對談與海洋科普閱讀，帶大家理解科技減碳的具體作法，並從生活、文化與研究經驗，思考海洋永續的意義與可以參與的方式。","The theme is corporate ESG and carbon-reduction technology. Starting from ocean science and its applications, we bring together people from industry, government, academia and research, plus graduate students from Taiwan and Palau. Through cross-disciplinary conversation and popular ocean-science reading, we look at how technology cuts carbon in practice, and ask what ocean sustainability means and how young people can take part."],
  about2:["適合對象：大專院校學生，以及關心永續的青年。","Who it’s for: university students and young people who care about sustainability."],
  agendaH:["議程","Program"],
- agendaLede:["活動仍在籌備中，講者與時段以最終公告為準。","The event is still being planned. Speakers and times are subject to the final announcement."],
+ agendaLede:["活動時間為 09:30–16:30。","The program runs from 09:30 to 16:30."],
  guestsH:["講者與合作單位","Speakers and partners"],
- guestsLede:["邀約進度會隨確認狀況更新。","Invitation status is updated as people confirm."],
+ guestsLede:["講者與合作單位皆已確認。","Speakers and partners are confirmed."],
  regH:["報名","Register"],
  regLede:["完全免費，提供午餐，現場還有抽獎禮物。名額 60–80 人，額滿為止。個人與團體請選擇對應表單。","Completely free, with lunch and prize draws on site. 60–80 seats, first come first served. Please choose the individual or group form."],
  soloH:["個人報名","Individual registration"],
@@ -193,13 +193,12 @@ const STR = {
  newsH:["最新消息","News"], faqH:["常見問題","FAQ"],
  date:["日期","Date"], place:["地點","Venue"], size:["規模","Capacity"], cost:["費用","Cost"], left:["倒數","Countdown"],
  dateV:["2026 年 12 月 4 日（五）","Friday, December 4, 2026"], timeV:["09:30–16:30","09:30–16:30"],
- venueV:["臺大校內（沃思空間／新月台二樓）","NTU campus (Worth Space / Xinyuetai, 2F)"],
+ venueV:["臺大第二學生活動中心・沃思空間 coSPACE<br>臺北市大安區羅斯福路四段 85 號 3 樓","coSPACE, 3F, NTU Second Student Activity Center<br>No. 85, Sec. 4, Roosevelt Rd., Da’an Dist., Taipei"],
  sizeV:["預計 60–80 人","60–80 people expected"], costV:["免費・含午餐","Free, lunch included"],
  days:["天","days"], today:["就是今天","Today"], over:["活動已結束","Event has ended"],
  st_ok:["已確認","Confirmed"], st_inv:["邀約中","Invited"], st_tbd:["待確認","To be confirmed"],
- partners:["合作：臺大海洋中心、新光人壽慈善基金會（邀約中）","In partnership with: NTU Ocean Center; Shin Kong Life Charity Foundation (invited)"],
+ partners:["合作：臺大海洋中心、臺大海洋研究所、新光人壽慈善基金會","Partners: NTU Ocean Center, NTU Institute of Oceanography, and Shin Kong Life Charity Foundation"],
  contactL:["聯絡：","Contact: "],
- fine:["講者、合作單位與時程以最終公告為準。","Speakers, partners and schedule are subject to the final announcement."],
  title:["青年海洋永續座談｜2026.12.04 臺大","Youth Ocean Sustainability Forum | Dec 4, 2026, NTU"],
  btn:["EN","中文"]
 };
@@ -211,24 +210,25 @@ const AGENDA = [
  {t:"11:45–12:15", h:["Q&A、茶敘與簽書","Q&A, tea and book signing"], p:["向作者提問，書籍展示與簽書交流。","Ask the author questions, browse the books and get them signed."]},
  {t:"12:15–13:10", h:["午餐與休息","Lunch and break"], p:["主辦單位提供午餐，報名時請選擇葷食或素食。","Lunch is provided. Please choose meat or vegetarian when you register."], rest:1},
  {t:"13:10–14:00", h:["海洋保育實例分享：草根精神的海洋保育","Ocean conservation in practice: grassroots spirit"], p:["賴以平老師（2025 未來教育台灣 100 得獎老師）以照片帶大家看海洋保育的現場。","Teacher Yi-Ping Lai (2025 Future Education Taiwan 100 awardee) shares photos from the field of ocean conservation."], big:1},
- {t:"14:00–15:00", h:["新光人壽慈善基金會主題講座","Shin Kong Life Charity Foundation keynote"], p:["企業 ESG 與科技減碳：企業實踐、技術案例與青年參與。","Corporate ESG and carbon-reduction technology: company practice, technical cases and youth participation."], big:1, s:"inv"},
- {t:"15:00–15:10", h:["休息","Break"], p:["茶點。","Refreshments."], rest:1},
- {t:"15:10–16:00", h:["青年永續論壇（英語）","Youth Sustainability Panel (in English)"], p:["新光人壽慈善基金會代表，與臺灣海洋研究生、政大帛琉研究生代表對談。","A Shin Kong Life Charity Foundation representative talks with graduate students in ocean science from Taiwan and from Palau (NCCU)."], big:1, s:"inv"},
- {t:"16:00–16:15", h:["休息與抽獎","Break and prize draw"], p:["抽禮券、小獎品，抽獎禮物豐富。","Gift voucher and prize draws."], rest:1},
- {t:"16:15–16:30", h:["總結與回饋","Wrap-up and feedback"], p:["串聯企業實踐、青年觀點與海洋知識。","Connecting corporate practice, youth perspectives and ocean knowledge."]}
+ {t:"14:00–14:40", h:["指標企業主題講座","Corporate keynote"], p:["新光人壽慈善基金會執行長唐志豪分享「守護珊瑚，永續海洋」實踐經驗。結束時頒發講者感謝獎狀並拍攝大合照。","Chih-Hao Tang, Executive Director of Shin Kong Life Charity Foundation, shares lessons from the foundation’s coral reef conservation program. The session ends with a certificate of appreciation and a group photo."], big:1, s:"ok"},
+ {t:"14:40–15:00", h:["休息時間","Break"], p:["提供簡易茶點。","Light refreshments provided."], rest:1},
+ {t:"15:00–16:00", h:["台帛青年永續座談（英語）","Taiwan–Palau Youth Sustainability Panel (in English)"], p:["Kenley Kenneth（帛琉青年代表）、賴以平（臺灣青年代表）、許雅貞（臺灣青年代表）。結束時頒發講者感謝獎狀並拍攝大合照。","Kenley Kenneth (Palau youth representative), Yi-Ping Lai and Ya-Chen Hsu (Taiwan youth representatives). The session ends with certificates of appreciation and a group photo."], big:1, s:"ok"},
+ {t:"16:00–16:30", h:["總結與回饋","Wrap-up and feedback"], p:["主持人結語、抽禮券及小獎品、填寫回饋表單。","Closing remarks from the host, a draw for gift vouchers and small prizes, and a feedback form."]}
 ];
 
 const PEOPLE = [
  {n:["王意婷","Yi-Ting Wang"], r:["全天主持人","Host for the day"], s:"ok"},
  {n:["曾于恒 老師","Prof. Yu-Heng Tseng"], r:["臺大海洋中心主任・開場致詞","Director, NTU Ocean Center · Opening remarks"], s:"ok"},
  {n:["詹森 老師","Prof. Sen Jan"], r:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], s:"ok"},
- {n:["賴以平 老師","Yi-Ping Lai"], r:["海洋保育實例分享","Ocean conservation case sharing"], s:"ok"},
- {n:["新光人壽慈善基金會","Shin Kong Life Charity Foundation"], r:["企業 ESG 與科技減碳講座","Corporate ESG and carbon-reduction talk"], s:"inv"},
- {n:["臺灣海洋研究生、政大帛琉研究生代表","Graduate students from Taiwan and Palau (NCCU)"], r:["青年永續論壇（英語）","Youth Sustainability Panel (in English)"], s:"inv"}
+ {n:["賴以平 老師","Yi-Ping Lai"], r:["海洋保育實例分享・台帛青年永續座談臺灣代表","Ocean conservation speaker · Taiwan representative on the youth panel"], s:"ok"},
+ {n:["唐志豪 執行長","Chih-Hao Tang"], r:["新光人壽慈善基金會・指標企業主題講座","Executive Director, Shin Kong Life Charity Foundation · Corporate keynote"], s:"ok"},
+ {n:["Kenley Kenneth","Kenley Kenneth"], r:["台帛青年永續座談帛琉代表","Palau representative on the youth panel"], s:"ok"},
+ {n:["許雅貞","Ya-Chen Hsu"], r:["台帛青年永續座談臺灣代表","Taiwan representative on the youth panel"], s:"ok"}
 ];
 
 const NEWS = [
- {d:"2026-11-03", t:["個人與團體報名皆已開放。講者與場地確認後會更新。","Individual and group registration are now open; we will update as speakers and venue are confirmed."]},
+ {d:"2026-11-11", t:["場地與講者皆已確認，下午議程已更新。","The venue and speakers are confirmed, and the afternoon program has been updated."]},
+ {d:"2026-11-03", t:["個人與團體報名皆已開放。","Individual and group registration are now open."]},
  {d:"2026-11-03", t:["報名完全免費，提供午餐，現場有抽獎禮物。","Registration is completely free, with lunch and prize draws on site."]},
  {d:"2026-11-03", t:["曾于恒老師（臺大海洋中心主任）與詹森老師（《黑潮震盪》作者）確認出席。","Prof. Yu-Heng Tseng (Director, NTU Ocean Center) and Prof. Sen Jan (author of Kuroshio Oscillation) have confirmed."]}
 ];
@@ -264,7 +264,7 @@ function render(){
   ].map(([k,v]) => `<div><b>${k}</b><span>${v}</span></div>`).join("");
 
   $("timeline").innerHTML = AGENDA.map(a =>
-    `<li class="${a.big?'big':''} ${a.rest?'rest':''}"><time>${a.t}</time><h3>${esc(a.h[i])} ${pill(a.s)}</h3><p>${esc(a.p[i])}</p></li>`).join("");
+    `<li class="${a.big?'big':''} ${a.rest?'rest':''}"><time>${a.t}</time><h3>${esc(a.h[i])}</h3><p>${esc(a.p[i])}</p></li>`).join("");
   $("people").innerHTML = PEOPLE.map(p =>
     `<div class="person">${pill(p.s)}<h3>${esc(p.n[i])}</h3><p>${esc(p.r[i])}</p></div>`).join("");
 
@@ -281,7 +281,7 @@ function render(){
     `<li><time>${n.d.replace(/-/g,".")}</time><span>${esc(n.t[i])}</span></li>`).join("");
   $("faqList").innerHTML = FAQ.map(f => `<details><summary>${esc(f.q[i])}</summary><p>${esc(f.a[i])}</p></details>`).join("");
   $("foot").innerHTML = `<p>${esc(s("host"))}<br>${esc(s("partners"))}</p>` +
-    (CONFIG.contact ? `<p>${s("contactL")}${esc(CONFIG.contact)}</p>` : "") + `<p>${esc(s("fine"))}</p>`;
+    (CONFIG.contact ? `<p>${s("contactL")}${esc(CONFIG.contact)}</p>` : "");
 }
 $("langBtn").addEventListener("click", () => {
   lang = lang === "zh" ? "en" : "zh";
