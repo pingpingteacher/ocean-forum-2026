@@ -70,6 +70,7 @@ h2{font-family:var(--serif);font-weight:900;font-size:clamp(26px,4vw,34px);margi
 .person{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
 .person h3{margin:6px 0 2px;font-family:var(--serif);font-size:20px}
 .person p{margin:0;color:var(--muted);font-size:15px}
+.person p+p{margin-top:10px}
 
 /* register */
 #register{background:var(--foam)}
@@ -221,7 +222,15 @@ const PEOPLE = [
  {n:["曾于恒 老師","Prof. Yu-Heng Tseng"], r:["臺大海洋中心主任・開場致詞","Director, NTU Ocean Center · Opening remarks"], s:"ok"},
  {n:["詹森 老師","Prof. Sen Jan"], r:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], s:"ok"},
  {n:["賴以平 老師","Yi-Ping Lai"], r:["海洋保育實例分享・台帛青年永續座談臺灣代表","Ocean conservation speaker · Taiwan representative on the youth panel"], s:"ok"},
- {n:["唐志豪 執行長","Chih-Hao Tang"], r:["新光人壽慈善基金會・指標企業主題講座","Executive Director, Shin Kong Life Charity Foundation · Corporate keynote"], s:"ok"},
+ {
+   n:["唐志豪 執行長","Chih-Hao Tang"],
+   r:["新光人壽慈善基金會・指標企業主題講座","Executive Director, Shin Kong Life Charity Foundation · Corporate keynote"],
+   bio:[
+     "新光人壽慈善基金會海洋保育專案發起人。近年持續推動淨海、珊瑚礁生態調查與復育、公民科學及海洋教育，串聯企業、學術與民間力量，期待讓海洋保育從一次行動，逐步成為可持續、可擴散的全民參與。",
+     "He launched the Shin Kong Life Charity Foundation’s marine conservation initiative. In recent years, he has brought together businesses, researchers, and community groups to advance ocean cleanups, coral reef surveys and restoration, citizen science, and ocean education. His goal is to help people turn a single conservation activity into sustained participation that more communities can take up."
+   ],
+   s:"ok"
+ },
  {n:["Kenley Kenneth","Kenley Kenneth"], r:["台帛青年永續座談帛琉代表","Palau representative on the youth panel"], s:"ok"},
  {n:["許雅貞","Ya-Chen Hsu"], r:["台帛青年永續座談臺灣代表","Taiwan representative on the youth panel"], s:"ok"}
 ];
@@ -266,7 +275,7 @@ function render(){
   $("timeline").innerHTML = AGENDA.map(a =>
     `<li class="${a.big?'big':''} ${a.rest?'rest':''}"><time>${a.t}</time><h3>${esc(a.h[i])}</h3><p>${esc(a.p[i])}</p></li>`).join("");
   $("people").innerHTML = PEOPLE.map(p =>
-    `<div class="person">${pill(p.s)}<h3>${esc(p.n[i])}</h3><p>${esc(p.r[i])}</p></div>`).join("");
+  `<div class="person">${pill(p.s)}<h3>${esc(p.n[i])}</h3><p>${esc(p.r[i])}</p>${p.bio ? `<p>${esc(p.bio[i])}</p>` : ""}</div>`).join("");
 
   [["btnSolo",CONFIG.soloUrl,"btnSolo"],["btnGroup",CONFIG.groupUrl,"btnGroup"]].forEach(([id,url,k]) => {
     const el = $(id);
