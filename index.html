@@ -207,7 +207,7 @@ const STR = {
 const AGENDA = [
  {t:"09:30–10:00", h:["報到入場","Check-in"], p:["簽到、領取資料、參觀海報。","Sign in, pick up materials, browse the posters."]},
  {t:"10:00–10:15", h:["開場與致詞","Opening and welcome"], p:["主持人王意婷介紹全天流程；臺大海洋中心主任曾于恒老師致詞，接著大合照。","Host Yi-Ting Wang introduces the day; Prof. Yu-Heng Tseng, Director of the NTU Ocean Center, gives opening remarks, followed by a group photo."], big:1},
- {t:"10:15–11:45", h:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], p:["詹森老師介紹與江偉全合著的海洋科普作品。議題：當科學普及淪為知識速食，我們得到的只是速成的盲點，而非深度的海洋。現場有問答與抽獎（海洋書籍 3 本及獎品）。","Prof. Sen Jan presents the popular ocean-science book he co-wrote with Wei-Chuan Chiang. Theme: when science outreach becomes fast food, we gain quick blind spots rather than a deep understanding of the ocean. Includes Q&A and a prize draw (3 ocean books and other gifts)."], big:1, s:"ok"},
+ {t:"10:15–11:45", h:["《黑潮震盪》作者講座","Author talk: KUROSHIO ODYSSEY"], p:["詹森老師介紹與江偉全合著的海洋科普作品。議題：當科學普及淪為知識速食，我們得到的只是速成的盲點，而非深度的海洋。現場有問答與抽獎（海洋書籍 3 本及獎品）。","Prof. Sen Jan presents the popular ocean-science book he co-wrote with Wei-Chuan Chiang. Theme: when science outreach becomes fast food, we gain quick blind spots rather than a deep understanding of the ocean. Includes Q&A and a prize draw (3 ocean books and other gifts)."], big:1, s:"ok"},
  {t:"11:45–12:15", h:["Q&A、茶敘與簽書","Q&A, tea and book signing"], p:["向作者提問，書籍展示與簽書交流。","Ask the author questions, browse the books and get them signed."]},
  {t:"12:15–13:10", h:["午餐與休息","Lunch and break"], p:["主辦單位提供午餐，報名時請選擇葷食或素食。","Lunch is provided. Please choose meat or vegetarian when you register."], rest:1},
  {t:"13:10–14:00", h:["海洋保育實例分享：草根精神的海洋保育","Ocean conservation in practice: grassroots spirit"], p:["賴以平老師（2025 未來教育台灣 100 得獎老師）以照片帶大家看海洋保育的現場。","Teacher Yi-Ping Lai (2025 Future Education Taiwan 100 awardee) shares photos from the field of ocean conservation."], big:1},
@@ -218,10 +218,34 @@ const AGENDA = [
 ];
 
 const PEOPLE = [
- {n:["王意婷","Yi-Ting Wang"], r:["全天主持人","Host for the day"], s:"ok"},
+ {
+   n:["王意婷","Yi-Ting Wang"],
+   r:["全天主持人・研究生學生會會長","Host for the day · President of the Graduate Student Association"],
+   bio:[
+     "以研究生的視角串連不同領域的聲音，引領全天對談與交流，讓科學、文化與海洋保育的觀點相互激盪，陪伴參與者一起探索海洋永續的可能。",
+     "Bringing a graduate student’s perspective to voices across disciplines, she guides the day’s conversations and exchanges, connecting science, culture, and marine conservation as participants explore possibilities for ocean sustainability."
+   ],
+   s:"ok"
+ },
  {n:["曾于恒 老師","Prof. Yu-Heng Tseng"], r:["臺大海洋中心主任・開場致詞","Director, NTU Ocean Center · Opening remarks"], s:"ok"},
- {n:["詹森 老師","Prof. Sen Jan"], r:["《黑潮震盪》作者講座","Author talk: Kuroshio Oscillation"], s:"ok"},
- {n:["賴以平 老師","Yi-Ping Lai"], r:["海洋保育實例分享・台帛青年永續座談臺灣代表","Ocean conservation speaker · Taiwan representative on the youth panel"], s:"ok"},
+ {
+   n:["詹森 教授","Prof. Sen Jan"],
+   r:["理性，是我們理解藍色脈動最浪漫的方式","Reason is our most romantic way of understanding the ocean’s blue pulse"],
+   bio:[
+     "從與江偉全合著的《黑潮震盪：從臺灣東岸啟航的北太平洋時空之旅》出發，帶我們走進黑潮的故事，以觀察、證據與思辨，理解海洋的藍色脈動。當知識愈來愈容易快速取得，如何讓科普成為深入探索海洋的起點，讓好奇走得更遠？",
+     "Drawing on the book KUROSHIO ODYSSEY, co-authored with Wei-Chuan Chiang, he introduces the story of the Kuroshio through observation, evidence, and critical thinking. As knowledge becomes ever faster to access, how can science communication inspire deeper exploration of the ocean and take our curiosity further?"
+   ],
+   s:"ok"
+ },
+ {
+   n:["賴以平 老師","Yi-Ping Lai"],
+   r:["用草根精神，投入海洋保育實踐","Putting a grassroots spirit into marine conservation"],
+   bio:[
+     "從教育現場走進海洋研究，將科學知識轉化為人人都能參與的行動。透過珊瑚觀察、環境教育與社群交流，串連學生與大眾，讓海洋保育從生活出發，一點一滴累積改變，把更好的未來留給孩子。",
+     "Moving from classroom teaching into ocean research, he turns scientific knowledge into actions everyone can join. Through coral observation, environmental education, and community exchanges, he connects students and the public, helping marine conservation grow from everyday life and building a better future for children."
+   ],
+   s:"ok"
+ },
  {
    n:["唐志豪 執行長","Chih-Hao Tang"],
    r:["新光人壽慈善基金會・指標企業主題講座","Executive Director, Shin Kong Life Charity Foundation · Corporate keynote"],
@@ -231,15 +255,31 @@ const PEOPLE = [
    ],
    s:"ok"
  },
- {n:["Kenley Kenneth","Kenley Kenneth"], r:["台帛青年永續座談帛琉代表","Palau representative on the youth panel"], s:"ok"},
- {n:["許雅貞","Ya-Chen Hsu"], r:["台帛青年永續座談臺灣代表","Taiwan representative on the youth panel"], s:"ok"}
+ {
+   n:["Kenley Kenneth（盧恩立）","Kenley Kenneth"],
+   r:["帛琉氣候談判與海洋事務代表","Palau representative for climate negotiations and ocean affairs"],
+   bio:[
+     "帛琉《聯合國氣候變化綱要公約》（UNFCCC）談判代表、南太平洋區域環境計畫（SPREP）COP31 海洋官員，分享島嶼國家的氣候挑戰與海洋永續觀點。",
+     "A UNFCCC negotiator for Palau and COP31 Ocean Officer at the Secretariat of the Pacific Regional Environment Programme (SPREP), he shares island nations’ climate challenges and perspectives on ocean sustainability."
+   ],
+   s:"ok"
+ },
+ {
+   n:["許雅貞","Ya-Chen Hsu"],
+   r:["臺灣青年代表‧臺大海洋所系學會","Taiwan youth representative · NTU Institute of Oceanography Student Association"],
+   bio:[
+     "從海洋科學的學習與青年參與出發，分享臺灣青年對海洋永續的關注，與國際夥伴交流，探索跨文化合作與實踐的可能。",
+     "Drawing on her studies in ocean science and youth participation, she shares Taiwanese young people’s concerns for ocean sustainability and exchanges ideas with international partners to explore cross-cultural cooperation and action."
+   ],
+   s:"ok"
+ }
 ];
 
 const NEWS = [
  {d:"2026-11-11", t:["場地與講者皆已確認，下午議程已更新。","The venue and speakers are confirmed, and the afternoon program has been updated."]},
  {d:"2026-11-03", t:["個人與團體報名皆已開放。","Individual and group registration are now open."]},
  {d:"2026-11-03", t:["報名完全免費，提供午餐，現場有抽獎禮物。","Registration is completely free, with lunch and prize draws on site."]},
- {d:"2026-11-03", t:["曾于恒老師（臺大海洋中心主任）與詹森老師（《黑潮震盪》作者）確認出席。","Prof. Yu-Heng Tseng (Director, NTU Ocean Center) and Prof. Sen Jan (author of Kuroshio Oscillation) have confirmed."]}
+ {d:"2026-11-03", t:["曾于恒老師（臺大海洋中心主任）與詹森老師（《黑潮震盪》作者）確認出席。","Prof. Yu-Heng Tseng (Director, NTU Ocean Center) and Prof. Sen Jan (author of KUROSHIO ODYSSEY) have confirmed."]}
 ];
 
 const FAQ = [
